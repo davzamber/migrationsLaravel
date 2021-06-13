@@ -15,7 +15,17 @@ class CreateStaffTable extends Migration
     {
         Schema::create('staff', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('nombre de usuario', 100);
+            $table->string('nombres', 100);
+            $table->string('apellidos', 100);
+            $table->string('correo', 100);
+            $table->string('contraseña', 100);
+            $table->foreignId('address_id');
+            $table->foreignId('store_id');
+            $table->string('image_source');
+            $table->boolean('activo');
+            $table->date('created_at');
+            $table->timestamp('updated_at');
         });
     }
 

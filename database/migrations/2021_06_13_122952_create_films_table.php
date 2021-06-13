@@ -15,7 +15,19 @@ class CreateFilmsTable extends Migration
     {
         Schema::create('films', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('description');
+            $table->year('release_year');
+            $table->unsignedInteger('language_id');
+            $table->tinyInteger('original_language_id');
+            $table->tinyInteger('rental_duration');
+            $table->decimal('rental_rate');
+            $table->smallInteger('lenght');
+            $table->decimal('replacement_cost');
+            $table->enum('rating', ['bad', 'good']);
+            $table->set('special_features', ['feature1', 'feature2']);
+            $table->date('created_at');
+            $table->timestamp('updated_at');
+
         });
     }
 

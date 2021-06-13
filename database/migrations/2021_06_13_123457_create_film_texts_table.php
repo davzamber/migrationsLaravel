@@ -15,7 +15,10 @@ class CreateFilmTextsTable extends Migration
     {
         Schema::create('film_texts', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->String('Title');
+            $table->text('description');
+            $table->date('created_at');
+            $table->timestamp('updated_at');
         });
     }
 
