@@ -15,7 +15,7 @@ class CreateFilmCategoriesTable extends Migration
     {
         Schema::create('film_categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id');
+            $table->tinyInteger('category_id');
             $table->date('created_at');
             $table->timestamp('updated_at');
             
